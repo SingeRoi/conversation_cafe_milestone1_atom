@@ -1,5 +1,6 @@
 body {
-    background-color: #fdfdfd;
+    background-color: #005bab;
+    color: #ff915c;
     font-family: 'Nobile', sans-serif;
 }
 
@@ -28,6 +29,249 @@ body {
     margin-right: 1%;
     margin-top: 1%;
 }
+
+/*---------speech bubble effect-----------*/
+
+$color1 :     #161719;
+$color2 :     #26272b;
+$text :       #9fa2a7;
+$highlight1 : #56b273;
+$highlight2 : #b388dd;
+$highlight3 : #ff8750;
+$highlight4 : #01AD9B;
+
+.text-center {
+	text-align: center;
+}
+
+.cf {
+	*zoom: 1;
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+
+body {
+	background-color: $color1;
+  font-family: 'Roboto', sans-serif;
+  color: $text;
+	.wrapper {
+		max-width: 450px;
+		margin: 0 auto;
+		h1 {
+			margin-top: 50px;
+			margin-bottom: 50px;
+			text-transform: uppercase;
+			font-size: 1.5em;
+		}
+		.speechbubble {
+			background-color: $color2;
+			color: $text;
+			font-size: .8em;
+			line-height: 1.75;
+			padding: 15px 25px;
+			margin-bottom: 75px;
+      cursor: default;
+
+			//  Border and arrow left
+			&:nth-child(2n) {
+				border-left: 5px solid;
+			}
+			&:nth-child(2n):after {
+				content: '';
+				margin-top: -30px;
+				padding-top: 0px;
+				position: relative;
+				bottom: -45px;
+				left: 20px;
+				border-width: 30px 0 0 30px;
+				border-style: solid;
+				border-color: $color2 transparent;
+				display: block;
+				width: 0;
+			}
+			//  Border and arrow right
+			&:nth-child(2n+1) {
+				border-right: 5px solid;
+			}
+			&:nth-child(2n+1):after {
+				content: '';
+				margin-top: -30px;
+				padding-top: 0px;
+				position: relative;
+				bottom: -45px;
+				left: 350px;
+				border-width: 30px 30px 0 0;
+				border-style: solid;
+				border-color: $color2 transparent;
+				display: block;
+				width: 0;
+			}
+
+
+			// Randomize every 4th bubble's border color
+			&:nth-child(4n+1) {
+				//border-color: hsla(random(365), random(365), 50, 1);
+				border-color: $highlight1;
+			}
+			&:nth-child(4n+2) {
+				border-color: $highlight4;
+			}
+			&:nth-child(4n+3) {
+				border-color: $highlight2;
+			}
+			&:nth-child(4n+4) {
+				border-color: $highlight3;
+			}
+
+			// Quotation symbols
+			p:before {
+				content: "“";
+				font-family: Georgia;
+				font-size: 40px;
+		    line-height: 0;
+		    display: inline-block;
+				display: -webkit-inline-box;
+			}
+			.username {
+				display: inline;
+				font-style: italic;
+				float: right;
+				&:before {
+					content: '- ';
+				}
+			}
+		}
+	}
+}
+
+/**********speech box paras-------------*/
+
+
+p {
+	/*/ layout*/
+	position: relative;
+	max-width: 30em;
+
+	/*/ looks*/
+	background-color: rgba(0, 0, 199, 0.5);/*#00b0c2;*/
+	padding: 1.125em 1.5em;
+	font-size: 1.25em;
+	border-radius: 1rem;
+  box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+}
+
+p::before {
+	/*/ layout**/
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	bottom: 100%;
+	left: 1.5em; /* offset should move with padding of parent*/
+	border: .75rem solid transparent;
+	border-top: none;
+
+	/*/ looks*/
+	border-bottom-color: #fff;
+	filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
+}
+
+/*/ dressing
+.p {
+	/*font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+	line-height: 1.5;
+	font-weight: 300;
+	color: #192229;/
+	background: linear-gradient(135deg, #F4F2F3, #BFC6D0);
+}
+
+.p {
+	height: 100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+body {
+	padding: 0 2rem;
+}
+
+/*.bubble
+{
+position: relative;
+display: inline-flex;
+max-width:250px;
+min-height:1.5em;
+padding: 20px;
+background: #FFFFFF;
+border: #7F7F7F solid 4px;
+-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+border-radius: 20px;
+}
+
+.bubble:after
+{
+content: "";
+position: absolute;
+bottom: -15px;
+left: 60%;
+border-style: solid;
+border-width: 15px 15px 0;
+border-color: #FFFFFF transparent;
+display: inline-block;
+width: 0;
+z-index: 1;
+}
+
+.bubble:before
+{
+content: "";
+position: absolute;
+bottom: -19.5px;
+left: calc(60% - 3px) ;
+border-style: solid;
+border-width: 18px 18px 0;
+border-color: #7F7F7F transparent;
+display: inline-block;
+width: 0;
+z-index: 0;
+}
+
+/*p.speech-left {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  background-color: #fff;
+  border: 8px solid #666;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  -webkit-box-shadow: 2px 2px 4px #888;
+  -moz-box-shadow: 2px 2px 4px #888;
+  box-shadow: 2px 2px 4px #888;
+
+}
+
+p.speech-left:before {
+  content: 'The friendly fun place to practice English';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 30px;
+  top: 100px;
+  border: 25px solid;
+  border-color: #666 transparent transparent #666;
+}*/
 
 .language {
     display: inline-block;
@@ -101,7 +345,7 @@ a {
 
 #landing-view {
     background-attachment: fixed;
-    background-image: url('../images/landing.jpg');
+    background-image: url('../images/landing1.jpg');
     background-position: bottom;
     background-size: cover;
     height: 100vh;
@@ -145,11 +389,11 @@ h2 {
     margin: 40px 0px 40px 0px;
 }
 
-/*------------WORK----------*/
+/*------------learn----------*/
 
-#work {
+#learn {
     background-attachment: fixed;
-    background-image: url('../images/desk.jpg');
+    background-image: url('../images/fun.jpg');
     background-position: center;
     background-size: cover;
     width: 100vw;
@@ -230,25 +474,25 @@ h2 {
     line-height: 14px;
 }
 
-/*--------SKILLS-----------*/
+/*--------support-----------*/
 
-.skills {
+.support {
     position: relative;
     top: 12%;
     padding-bottom: 96px;
 }
 
-.skills-inner {
+.support-inner {
     margin-bottom: 10%;
 }
 
 @media (min-width: 768px) {
-    .skills-inner {
+    .support-inner {
         width: 738px;
     }
 }
 
-.skill-circle {
+.support-circle {
     display: inline-table;
     margin-bottom: 55px;
     padding-left: 6%;
@@ -359,9 +603,10 @@ h2 {
 
 #contact {
     background-attachment: fixed;
-    background-image: url('../images/computer.jpg');
-    background-position: left;
+    background-image: url('../images/talk.jpg');
+    background-position: center;
     background-size: cover;
+    width: 100vw;
     padding-bottom: 100px;
     padding-top: 42px;
     text-align: left;
@@ -426,14 +671,14 @@ i:hover {
 
 }
 
-/* ----------Contact Form  Modal --------*/
+/* ----------Contact Form Modal --------*/
 
 .modal-body {
     font-size: 1.15em;
 }
 
 .btn-default {
-    background-color: #ccc;
+    background-color: #ff915c;
 }
 
 .privacy-policy {
@@ -454,7 +699,7 @@ a.privacy-policy:hover {
 /*-----------MEDIA QUERIES----------*/
 
 @media (max-width: 768px) and (min-width: 375px) {
-    .scroll-work {
+    .scroll-learn {
         width: 80%;
     }
     .fa-chevron-down {
@@ -463,20 +708,20 @@ a.privacy-policy:hover {
 }
 
 @media (max-width: 992px) {
-    #contact, #work, #landing-view{
+    #contact, #learn, #landing-view{
         background-attachment: scroll;
     }
 }
 
 @media (min-width: 992px) {
-    #about-me {
-        background-image: url('../images/haley.jpg');
+    #about-us {
+        background-image: url('../images/conversation.jpg');
         background-position: center;
         background-size: cover;
         width: 100vw;
     }
-    #skills {
-        background-image: url('../images/skills.jpg');
+    #support {
+        background-image: url('../images/support.jpg');
         background-position: center;
         background-size: cover;
         width: 100vw;
