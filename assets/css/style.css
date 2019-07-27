@@ -4,6 +4,17 @@ body {
     font-family: 'Nobile', sans-serif;
 }
 
+/*-----------titles---------*/
+/*h1, h2, h3 {
+  margin-bottom: 10px;
+}*/
+
+h1 {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+
 /*----------NAVBAR---------*/
 
 .navbar {
@@ -32,127 +43,238 @@ body {
 
 /*---------speech bubble effect-----------*/
 
-$color1 :     #161719;
-$color2 :     #26272b;
-$text :       #9fa2a7;
-$highlight1 : #56b273;
-$highlight2 : #b388dd;
-$highlight3 : #ff8750;
-$highlight4 : #01AD9B;
-
-.text-center {
-	text-align: center;
+/*--------vertical text speech bubble----*/
+.speech-vertical {
+    background: rgba(0, 176, 194, 0.5);
+    -webkit-border-radius: 4px;
+            border-radius: 4px;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin: 10px 3%;
+    max-width: 400px;
+    padding: 15px;
+    position: relative;
 }
 
-.cf {
-	*zoom: 1;
-	&:before, &:after {
-		content: " ";
-		display: table;
-	}
-	&:after {
-		clear: both;
-	}
+.speech-bubble p {
+  /*  margin: 0 0 10px; deleted to remove visible border*/
+}
+.speech-bubble p:last-of-type {
+    margin-bottom: 0;
+}
+
+.speech-bubble::after {
+    border-left: 20px solid transparent;
+    border-top: 20px solid rgba(0, 176, 194, 0.5);
+    bottom: -20px;
+    content: "";
+    position: absolute;
+    left : 0px;
+}
+/*vertical texthttps://stackoverflow.com/questions/45479558/html-css-how-to-write-a-text-vertically-keeping-the-characters-horizontally---*/
+.vertical-text {
+  margin:  auto 3.33em;
+  margin-top: -1.43em;
+  width: 0;
+  word-wrap: break-word;
+
+}
+
+/*body {
+  font-family: Helvetica, sans-serif;
+  text-align: left;*/
+}
+
+.first {
+  margin-left: .1em;
+  letter-spacing: 12px;
+
+}
+
+.second {
+  margin-left: 4.5em;
+  margin-top: -1.12em;
+  letter-spacing: 12px;
+}
+.speech-bubble::after {
+    border-left: 20px solid transparent;
+    border-top: 20px solid rgba(0, 176, 194, 0.5);
+    bottom: -20px;
+    content: "";
+    position: absolute;
+    left: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.speech-vertical::after {
+    border-left: 20px solid transparent;
+    border-top: 20px solid rgba(0, 176, 194, 0.5);
+    bottom: -20px;
+    content: "";
+    position: absolute;
+    left: 40px;
+
+  }
+/*---end vertical speech bubble---------*/
+
+/* ----------------auralinna's bubble modified---------------*/
+
+.speech-bubble {
+    background: rgba(0, 176, 194, 0.5);
+  	display: inline-block;
+    -webkit-border-radius: 4px;
+            border-radius: 4px;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin: 0 auto 40px;
+    max-width: 100%;
+    padding: 15px;
+    position: relative;
+    word-wrap: break-word;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.speech-bubble p {
+  /*  margin: 0 0 10px; deleted to remove visible border*/
+}
+.speech-bubble p:last-of-type {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.speech-bubble::after {
+    border-left: 20px solid transparent;
+    border-top: 20px solid rgba(0, 176, 194, 0.5);
+    bottom: -20px;
+    content: "";
+    position: absolute;
+    left: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+/*------------------------------- auralinna's bubble end---------------------*/
+
+
+}
+
+/* --------- bubble for text --------------*/
+/.bubble {
+    background-color: rgba(0, 91, 171, 0.5); /* bubble*/
+    -webkit-border-radius:7px;
+    -moz-border-radius:7px;
+    border-radius: 7px;
+    border: 2px transparent rgba(0, 91, 171, 0.1); /* bubble not responsive */
+   -webkit-filter: drop-shadow(4px 4px 5px rgba(0,0,0,0.5));
+    -moz-filter: drop-shadow(4px 4px 5px rgba(0,0,0,0.5));
+    -ms-filter: drop-shadow(4px 4px 5px rgba(0,0,0,0.5));
+    -o-filter: drop-shadow(4px 4px 5px rgba(0,0,0,0.5));*/
+    /*box-shadow: inset 0 1px 1px hsla(0,0%,100%,.5), 4px 4px 0 hsla(0,0%,0%,.2); */
+/*    z-index: 0;*/
+
+  /*  color: #333;
+    font-family: Ubuntu, sans-serif;
+    font: 16px/25px;
+    padding: 15px 25px;
+    position: absolute;
+    left: 50;
+    top: 50px;
+    width: 860px;
+}*/
+
+p {
+    display: inline-block;
+    margin:15px 0 2em 85px;
+    font-style:italic;
+    position: relative;
+    top: 200px;
+    left: 200px;
+}
+
+.bubble:after, .bubble:before {
+    border-bottom: 25px solid transparent;
+    border-right: 25px solid rgba(0, 91, 171, 0.25); /* carat*/
+/   bottom: -25px;
+    content: '';
+    position: absolute;
+    right: 25px;
+}*/
+
+
+
+
+/*$bg:darken(#8CA8D8, 10%);
+ html,body{height:100%;}body{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;background:$bg;}
+*/
+
+/*/ REQUIRED
+/// ==========================================================*/
+
+/*$gutter: 20px;
+$caret-unit: 25px;
+$bubble-bg: #8CA8D8;
+$bubble-color: white;
+$cite-color: $bubble-color;
+*/
+
+/*/ Opposite Direction needed for blockquote speehbubbles
+/// ==========================================================
+/// Returns the opposite direction of each direction in a list
+/// @author Hugo Giraudel
+/// @param {List} $directions - List of initial directions
+/// @return {List} - List of opposite directions*/
+
+/@function opposite-direction($directions) {
+  $opposite-directions: ();
+  $direction-map: (
+    'top': 'bottom',
+    'right': 'left',
+    'bottom': 'top',
+    'left': 'right',
+    'center': 'center',
+    'ltr': 'rtl',
+    'rtl': 'ltr'
+  );
+
+  @each $direction in $directions {
+    $direction: to-lower-case($direction);
+
+    @if map-has-key($direction-map, $direction) {
+      $opposite-directions: append($opposite-directions, unquote(map-get($direction-map, $direction)));
+    } @else {
+      @warn "No opposite direction can be found for `#{$direction}`. Direction omitted.";
+    }
+  }
+
+  @return $opposite-directions;
 }
 
 
-
-body {
-	background-color: $color1;
-  font-family: 'Roboto', sans-serif;
-  color: $text;
-	.wrapper {
-		max-width: 450px;
-		margin: 0 auto;
-		h1 {
-			margin-top: 50px;
-			margin-bottom: 50px;
-			text-transform: uppercase;
-			font-size: 1.5em;
-		}
-		.speechbubble {
-			background-color: $color2;
-			color: $text;
-			font-size: .8em;
-			line-height: 1.75;
-			padding: 15px 25px;
-			margin-bottom: 75px;
-      cursor: default;
-
-			//  Border and arrow left
-			&:nth-child(2n) {
-				border-left: 5px solid;
-			}
-			&:nth-child(2n):after {
-				content: '';
-				margin-top: -30px;
-				padding-top: 0px;
-				position: relative;
-				bottom: -45px;
-				left: 20px;
-				border-width: 30px 0 0 30px;
-				border-style: solid;
-				border-color: $color2 transparent;
-				display: block;
-				width: 0;
-			}
-			//  Border and arrow right
-			&:nth-child(2n+1) {
-				border-right: 5px solid;
-			}
-			&:nth-child(2n+1):after {
-				content: '';
-				margin-top: -30px;
-				padding-top: 0px;
-				position: relative;
-				bottom: -45px;
-				left: 350px;
-				border-width: 30px 30px 0 0;
-				border-style: solid;
-				border-color: $color2 transparent;
-				display: block;
-				width: 0;
-			}
+/// Unit Removal
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);*/
 
 
-			// Randomize every 4th bubble's border color
-			&:nth-child(4n+1) {
-				//border-color: hsla(random(365), random(365), 50, 1);
-				border-color: $highlight1;
-			}
-			&:nth-child(4n+2) {
-				border-color: $highlight4;
-			}
-			&:nth-child(4n+3) {
-				border-color: $highlight2;
-			}
-			&:nth-child(4n+4) {
-				border-color: $highlight3;
-			}
 
-			// Quotation symbols
-			p:before {
-				content: "“";
-				font-family: Georgia;
-				font-size: 40px;
-		    line-height: 0;
-		    display: inline-block;
-				display: -webkit-inline-box;
-			}
-			.username {
-				display: inline;
-				font-style: italic;
-				float: right;
-				&:before {
-					content: '- ';
-				}
-			}
-		}
-	}
+/*// Triangle Mixin
+/// ==========================================================*/
+
+/*@mixin caret($point, $border-width, $color) {
+  $opposite: opposite-direction($point);
+  border: $border-width solid transparent;
+  border-#{$opposite}: $border-width solid $color;
+  border-#{$point}: 0;
+  height: 0;
+  width: 0;
+}*/
+
+
 }
+
+}
+
 
 /**********speech box paras-------------*/
-
 
 p {
 	/*/ layout*/
@@ -160,11 +282,12 @@ p {
 	max-width: 30em;
 
 	/*/ looks*/
-	background-color: rgba(0, 0, 199, 0.5);/*#00b0c2;*/
+	background-color: rgba(0, 176, 194, 0.5);/*rgba(0, 0, 199, 0.5);/*#00b0c2;*/
+  color: rgba(0, 91, 171, 1);
 	padding: 1.125em 1.5em;
 	font-size: 1.25em;
 	border-radius: 1rem;
-  box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+/*  box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);*/
 }
 
 p::before {
@@ -179,99 +302,10 @@ p::before {
 	border-top: none;
 
 	/*/ looks*/
-	border-bottom-color: #fff;
-	filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
+	/*border-bottom-color: rgba(0, 176, 194, 0.5); /*rgba(0, 0, 199, 0.5); /*#fff;*/
+	/*filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));*/
 }
 
-/*/ dressing
-.p {
-	/*font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-	line-height: 1.5;
-	font-weight: 300;
-	color: #192229;/
-	background: linear-gradient(135deg, #F4F2F3, #BFC6D0);
-}
-
-.p {
-	height: 100%;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-}
-
-body {
-	padding: 0 2rem;
-}
-
-/*.bubble
-{
-position: relative;
-display: inline-flex;
-max-width:250px;
-min-height:1.5em;
-padding: 20px;
-background: #FFFFFF;
-border: #7F7F7F solid 4px;
--webkit-border-radius: 20px;
--moz-border-radius: 20px;
-border-radius: 20px;
-}
-
-.bubble:after
-{
-content: "";
-position: absolute;
-bottom: -15px;
-left: 60%;
-border-style: solid;
-border-width: 15px 15px 0;
-border-color: #FFFFFF transparent;
-display: inline-block;
-width: 0;
-z-index: 1;
-}
-
-.bubble:before
-{
-content: "";
-position: absolute;
-bottom: -19.5px;
-left: calc(60% - 3px) ;
-border-style: solid;
-border-width: 18px 18px 0;
-border-color: #7F7F7F transparent;
-display: inline-block;
-width: 0;
-z-index: 0;
-}
-
-/*p.speech-left {
-  position: relative;
-  width: 200px;
-  height: 100px;
-  text-align: center;
-  line-height: 100px;
-  background-color: #fff;
-  border: 8px solid #666;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  border-radius: 30px;
-  -webkit-box-shadow: 2px 2px 4px #888;
-  -moz-box-shadow: 2px 2px 4px #888;
-  box-shadow: 2px 2px 4px #888;
-
-}
-
-p.speech-left:before {
-  content: 'The friendly fun place to practice English';
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 30px;
-  top: 100px;
-  border: 25px solid;
-  border-color: #666 transparent transparent #666;
-}*/
 
 .language {
     display: inline-block;
@@ -360,14 +394,20 @@ a {
 }
 
 h1 {
-    padding-top: 5%;
+    padding-top: .1%;
     font-size: 5.5em;
+    margin-top: .1%;
+    margin-bottom: .1%;
 }
 
 .jumbotron p {
     font-size: 2em;
 }
 
+.friendly {
+    margin-top: -.1%;
+    text-transform: capitalize;
+}
 
 /*------------ABOUT----------*/
 
@@ -379,7 +419,7 @@ h1 {
 
 h2 {
     margin-left: 15px;
-    margin-top: 15%;
+    margin-top: 10%;
     letter-spacing: 7px;
     text-transform: uppercase;
 }
@@ -698,6 +738,27 @@ a.privacy-policy:hover {
 
 /*-----------MEDIA QUERIES----------*/
 
+@media (min-width: 675px) {
+.speech-bubble {
+ display: inline-block;
+    }
+  .speech-vertical {
+  display: none;
+  }
+
+}
+@media (max-width: 674px) and (min-width: 300px) {
+  .speech-bubble {
+   display:none;
+  }
+.speech-vertical {
+  display: inline-block;
+  }
+
+}
+
+}
+
 @media (max-width: 768px) and (min-width: 375px) {
     .scroll-learn {
         width: 80%;
@@ -705,7 +766,11 @@ a.privacy-policy:hover {
     .fa-chevron-down {
         margin-top: 52vh;
     }
+
 }
+
+
+
 
 @media (max-width: 992px) {
     #contact, #learn, #landing-view{
@@ -729,4 +794,5 @@ a.privacy-policy:hover {
     .fa-chevron-down {
         margin-top: 32vh;
     }
+
 }
