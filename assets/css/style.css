@@ -406,7 +406,7 @@ h1 {
 
 .friendly {
     margin-top: -.1%;
-    text-transform: capitalize;
+    text-transform:
 }
 
 /*------------ABOUT----------*/
@@ -710,7 +710,11 @@ i:hover {
     color: #564F6F;
 
 }
+/* ----------Quiz Modal --------*/
 
+quiz-modal {
+  z-index: 1041;
+}
 /* ----------Contact Form Modal --------*/
 
 .modal-body {
