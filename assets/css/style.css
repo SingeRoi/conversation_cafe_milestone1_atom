@@ -464,7 +464,7 @@ h2 {
     background-color: #fdfdfd;
     border-radius: 2.5%;
     width: 18em;
-    height: 18em;
+    height: 22em;
     top: 50%;
     left: 50%;
     margin: 15% auto;
@@ -513,12 +513,17 @@ h2 {
     height: 54px;
     line-height: 14px;
 }
+
+.question-icon {
+    padding: 20px 0;
+    border-radius: 50%;
+    font-size: 36px;
+    width: 54px;
+    height: 54px;
+    line-height: 14px;
+}
+
 /*-------video---------------*/
-/*.video-place {
-    position: relative;
-    left: 0;
-    bottom: 0;
-}*/
 
 .video-p {
 position: relative;
@@ -529,15 +534,6 @@ padding: .125em 1.35em;
 font-size: 1.25em;
 border-radius: 1rem;
 }
-
-
-/*.stackItem {
-    position: relative;
-    left: 15%;
-    bottom: 0;
-    width: 40%;
-    height: 100%;
-}*/
 
 .centered-thing {
     position: absolute;
@@ -733,7 +729,9 @@ form.login a:hover
 }
 
 /*----------quiz.css---------------*/
-
+.btn-sm {
+  background: transparent;
+}
 
 .loanParamsLoader {
     top: 143px;
@@ -755,6 +753,7 @@ form.login a:hover
     background-color: #ffffff;
     color: #aaaaaa;
 }
+
 .container ul{
   list-style: none;
   margin: 0;
@@ -876,7 +875,7 @@ input[type=radio]:checked ~ label{
     margin-top: -50px;
     margin-left: -100px;
 }
-/*----------riple bubble-----------------*/
+/*----------ripple bubble-----------------*/
 ul {
     margin: 0 auto;
 }
